@@ -1,6 +1,8 @@
 defmodule SgarhWeb.Router do
   use SgarhWeb, :router
 
+  import SgarhWeb.UsuarioAuth
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule SgarhWeb.Router do
     plug :put_root_layout, {SgarhWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_usuario
   end
 
   pipeline :api do
@@ -52,5 +55,38 @@ defmodule SgarhWeb.Router do
 
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
+  end
+
+  ## Authentication routes
+
+  scope "/", SgarhWeb do
+    pipe_through [:browser, :redirect_if_usuario_is_authenticated]
+
+    get "/usuarios/register", UsuarioRegistrationController, :new
+    post "/usuarios/register", UsuarioRegistrationController, :create
+    get "/usuarios/log_in", UsuarioSessionController, :new
+    post "/usuarios/log_in", UsuarioSessionController, :create
+    get "/usuarios/reset_password", UsuarioResetPasswordController, :new
+    post "/usuarios/reset_password", UsuarioResetPasswordController, :create
+    get "/usuarios/reset_password/:token", UsuarioResetPasswordController, :edit
+    put "/usuarios/reset_password/:token", UsuarioResetPasswordController, :update
+  end
+
+  scope "/", SgarhWeb do
+    pipe_through [:browser, :require_authenticated_usuario]
+
+    get "/usuarios/settings", UsuarioSettingsController, :edit
+    put "/usuarios/settings", UsuarioSettingsController, :update
+    get "/usuarios/settings/confirm_email/:token", UsuarioSettingsController, :confirm_email
+  end
+
+  scope "/", SgarhWeb do
+    pipe_through [:browser]
+
+    delete "/usuarios/log_out", UsuarioSessionController, :delete
+    get "/usuarios/confirm", UsuarioConfirmationController, :new
+    post "/usuarios/confirm", UsuarioConfirmationController, :create
+    get "/usuarios/confirm/:token", UsuarioConfirmationController, :edit
+    post "/usuarios/confirm/:token", UsuarioConfirmationController, :update
   end
 end

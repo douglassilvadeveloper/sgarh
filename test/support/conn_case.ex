@@ -35,4 +35,30 @@ defmodule SgarhWeb.ConnCase do
     Sgarh.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
+
+  @doc """
+  Setup helper that registers and logs in usuarios.
+
+      setup :register_and_log_in_usuario
+
+  It stores an updated connection and a registered usuario in the
+  test context.
+  """
+  def register_and_log_in_usuario(%{conn: conn}) do
+    usuario = Sgarh.ContasFixtures.usuario_fixture()
+    %{conn: log_in_usuario(conn, usuario), usuario: usuario}
+  end
+
+  @doc """
+  Logs the given `usuario` into the `conn`.
+
+  It returns an updated `conn`.
+  """
+  def log_in_usuario(conn, usuario) do
+    token = Sgarh.Contas.generate_usuario_session_token(usuario)
+
+    conn
+    |> Phoenix.ConnTest.init_test_session(%{})
+    |> Plug.Conn.put_session(:usuario_token, token)
+  end
 end
