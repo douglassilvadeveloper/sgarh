@@ -7,6 +7,10 @@
     </div>
   <% end %>
 
+  <%= label f, :nome %>
+  <%= text_input f, :nome, required: true %>
+  <%= error_tag f, :nome %>
+
   <%= label f, :email %>
   <%= email_input f, :email, required: true %>
   <%= error_tag f, :email %>
@@ -14,6 +18,14 @@
   <%= label f, :password %>
   <%= password_input f, :password, required: true %>
   <%= error_tag f, :password %>
+
+  <%= label f, :ativo %>
+  <%= checkbox f, :ativo %>
+  <%= error_tag f, :ativo %>
+
+  <%= label f, :admin %>
+  <%= checkbox f, :admin %>
+  <%= error_tag f, :admin %>
 
   <div>
     <%= submit "Register" %>
