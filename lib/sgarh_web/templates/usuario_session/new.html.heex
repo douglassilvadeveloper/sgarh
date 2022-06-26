@@ -1,27 +1,22 @@
-<h1>Log in</h1>
+<div class="login-content container-flex-col">
+  <div class="card card-login container-flex-col">  
+    <h1 class="logo-dark">SGARH</h1>
+    <p>Faça login para continuar</p>
 
-<.form let={f} for={@conn} action={Routes.usuario_session_path(@conn, :create)} as={:usuario}>
-  <%= if @error_message do %>
-    <div class="alert alert-danger">
-      <p><%= @error_message %></p>
-    </div>
-  <% end %>
+    <.form let={f} for={@conn} action={Routes.usuario_session_path(@conn, :create)} as={:usuario}>
+      <%= if @error_message do %>
+        <div class="alert alert-danger">
+          <p><%= @error_message %></p>
+        </div>
+      <% end %>
 
-  <%= label f, :email %>
-  <%= email_input f, :email, required: true %>
+      <%= email_input f, :email, required: true, placeholder: "E-mail" %>
 
-  <%= label f, :password %>
-  <%= password_input f, :password, required: true %>
+      <%= password_input f, :password, required: true, placeholder: "Senha" %>
 
-  <%= label f, :remember_me, "Keep me logged in for 60 days" %>
-  <%= checkbox f, :remember_me %>
-
-  <div>
-    <%= submit "Log in" %>
+      <div>
+        <%= submit "Entrar", class: "btn-login" %>
+      </div>
+    </.form>
   </div>
-</.form>
-
-<p>
-  <%= link "Register", to: Routes.usuario_registration_path(@conn, :new) %> |
-  <%= link "Forgot your password?", to: Routes.usuario_reset_password_path(@conn, :new) %>
-</p>
+</div>
