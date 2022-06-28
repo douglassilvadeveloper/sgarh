@@ -18,7 +18,7 @@ defmodule SgarhWeb.Router do
   end
 
   scope "/", SgarhWeb do
-    pipe_through :browser
+    pipe_through [:browser, :require_authenticated_usuario]
 
     get "/", PageController, :index
   end
@@ -39,7 +39,7 @@ defmodule SgarhWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through :browser
+      pipe_through [:browser, :require_authenticated_usuario]
 
       live_dashboard "/dashboard", metrics: SgarhWeb.Telemetry
     end

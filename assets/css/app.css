@@ -1,10 +1,10 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
   background-color: #faf9f9;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Alerts and form errors used by phx.new */
@@ -169,7 +169,7 @@ body {
   height: 100vh;
 }
 .card-login {
-  background-color: #FFF;
+  background-color: #fff;
   padding: 12px;
   width: 320px;
   border-radius: 6px;
@@ -180,7 +180,7 @@ body {
   padding: 16px 8px;
   border-radius: 6px;
   background-color: #202230;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   font-size: 24px;
 }
@@ -188,12 +188,13 @@ body {
   width: 100%;
   background-color: #202230;
   border-color: #202230;
-  color: #FFF;
+  color: #fff;
 }
 
 /* Navbar */
 
-.navbar, .navbar-content-left {
+.navbar,
+.navbar-content-left {
   display: flex;
   align-items: center;
 }
@@ -210,28 +211,30 @@ body {
   font-size: 24px;
 }
 
-.navbar .logo-default, .menu-items, .user-menu {
-  color: #FFF;
+.navbar .logo-default,
+.menu-items,
+.user-menu {
+  color: #fff;
   padding: 10px;
-  margin: 2px; auto;
+  margin: 2px auto;
   border-radius: 6px;
 }
-.navbar .menu-items:hover, .user-menu:hover {
+.navbar .menu-items:hover,
+.user-menu:hover {
   background-color: #474957;
-  color: #FFF;
+  color: #fff;
   transition: all 0.2s;
 }
 
 .user-dropdown {
   position: relative;
   display: inline-block;
-  
 }
 
 .user-dropdown-content {
   display: none;
   position: absolute;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 6px;
   min-width: 160px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
@@ -250,7 +253,7 @@ body {
 }
 
 .user-dropdown-content a:hover {
-  background-color: #F5F5F2;
+  background-color: #f5f5f2;
 }
 
 .user-dropdown:hover .user-dropdown-content {
@@ -264,7 +267,7 @@ body {
   padding: 6px;
 }
 .statistic-card {
-  background-color: #FFF;
+  background-color: #fff;
   padding: 12px;
   width: 24%;
   border-radius: 6px;
@@ -280,18 +283,18 @@ body {
   padding: 12px;
 }
 .bg-info {
-  background-color: #2671A0;
-  color: #FFF;
+  background-color: #2671a0;
+  color: #fff;
 }
 .bg-success {
-  background-color: #22AB65;
-  color: #FFF;
+  background-color: #22ab65;
+  color: #fff;
 }
 .bg-warning {
-  background-color: #BA9817;
-  color: #FFF;
+  background-color: #ba9817;
+  color: #fff;
 }
 .bg-danger {
-  background-color: #F80F27;
-  color: #FFF;
+  background-color: #f80f27;
+  color: #fff;
 }
