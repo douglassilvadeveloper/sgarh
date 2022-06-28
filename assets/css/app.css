@@ -1,5 +1,11 @@
 /* This file is for your main application CSS */
 @import "./phoenix.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background-color: #faf9f9;
+  font-family: 'Roboto', sans-serif;
+}
 
 /* Alerts and form errors used by phx.new */
 .alert {
@@ -161,7 +167,6 @@
 /* Tela de Login */
 .login-content {
   height: 100vh;
-  background-color: #faf9f9;
 }
 .card-login {
   background-color: #FFF;
@@ -252,3 +257,41 @@
   display: block;
 }
 
+.statistic-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+}
+.statistic-card {
+  background-color: #FFF;
+  padding: 12px;
+  width: 24%;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.statistic-card-title {
+  font-size: 20px;
+}
+.statistic-card-content {
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 12px;
+}
+.bg-info {
+  background-color: #2671A0;
+  color: #FFF;
+}
+.bg-success {
+  background-color: #22AB65;
+  color: #FFF;
+}
+.bg-warning {
+  background-color: #BA9817;
+  color: #FFF;
+}
+.bg-danger {
+  background-color: #F80F27;
+  color: #FFF;
+}
