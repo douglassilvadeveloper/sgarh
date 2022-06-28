@@ -93,6 +93,7 @@ defmodule SgarhWeb.Router do
     pipe_through [:browser, :require_authenticated_usuario]
 
     get "/usuarios", UsuarioController, :index
+    delete "/usuarios/:id", UsuarioController, :delete
 
   end
 end

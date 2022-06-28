@@ -13,6 +13,10 @@ defmodule Sgarh.Contas do
     |> Repo.all()
   end
 
+  def delete_usuario(%Usuario{} = usuario) do
+    Repo.delete(usuario)
+  end
+
   ## Database getters
 
   @doc """
