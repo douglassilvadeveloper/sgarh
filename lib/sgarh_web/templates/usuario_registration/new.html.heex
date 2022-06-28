@@ -35,7 +35,9 @@
 
     <div>
       <%= submit "Cadastrar" %>
+      <%= link "Voltar", to: Routes.usuario_path(@conn, :index), class: "text-warning" %>
     </div>
+
   </.form>
   </div>
 </div>

@@ -186,7 +186,7 @@ body {
 }
 button {
   background-color: #202230;
-  border-color: #202230;
+  border: none;
   color: #fff;
 }
 button:hover {
@@ -333,12 +333,17 @@ button:hover {
 .table td {
   padding: 6px;
 }
-.page-title {
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.btn-add {
+.page-title {
+  margin: 2px 0;
+  padding: 2px 0;
+  font-size: 33px;
+}
+.btn {
   padding: 8px 12px;
   border-radius: 6px;
 }
@@ -361,4 +366,7 @@ button:hover {
   margin-top: 3px;
   width: 20px;
   height: 20px;
+}
+header {
+  margin-bottom: 2px;
 }
