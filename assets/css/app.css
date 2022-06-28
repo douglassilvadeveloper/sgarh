@@ -282,6 +282,11 @@ body {
   border-radius: 50%;
   padding: 12px;
 }
+.bg-primary {
+  background-color: #202230;
+  color: #fff;
+}
+
 .bg-info {
   background-color: #2671a0;
   color: #fff;
@@ -297,4 +302,58 @@ body {
 .bg-danger {
   background-color: #f80f27;
   color: #fff;
+}
+.text-primary {
+  color: #202230;
+}
+.text-info {
+  color: #2671a0;
+}
+.text-success {
+  color: #22ab65;
+}
+.text-warning {
+  color: #ba9817;
+}
+.text-danger {
+  color: #f80f27;
+}
+.card-table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.table th,
+.table td {
+  padding: 6px;
+}
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-add {
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.form-container {
+  width: 680px;
+  margin: auto;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.checkbox {
+  display: flex;
+}
+.checkbox label,
+.checkbox input {
+  margin-right: 6px;
+}
+.checkbox input {
+  margin-top: 3px;
+  width: 20px;
+  height: 20px;
 }

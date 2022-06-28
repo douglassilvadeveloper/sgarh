@@ -1,38 +1,41 @@
-<h1>Register</h1>
-
-<.form let={f} for={@changeset} action={Routes.usuario_registration_path(@conn, :create)}>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
-
-  <%= label f, :nome %>
-  <%= text_input f, :nome, required: true %>
-  <%= error_tag f, :nome %>
-
-  <%= label f, :email %>
-  <%= email_input f, :email, required: true %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :password %>
-  <%= password_input f, :password, required: true %>
-  <%= error_tag f, :password %>
-
-  <%= label f, :ativo %>
-  <%= checkbox f, :ativo %>
-  <%= error_tag f, :ativo %>
-
-  <%= label f, :admin %>
-  <%= checkbox f, :admin %>
-  <%= error_tag f, :admin %>
-
+<div class="form-container">
   <div>
-    <%= submit "Register" %>
-  </div>
-</.form>
+  <h1>Novo Usuário</h1>
 
-<p>
-  <%= link "Log in", to: Routes.usuario_session_path(@conn, :new) %> |
-  <%= link "Forgot your password?", to: Routes.usuario_reset_password_path(@conn, :new) %>
-</p>
+  <.form let={f} for={@changeset} action={Routes.usuario_registration_path(@conn, :create)}>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <%= label f, :nome, "Nome" %>
+    <%= text_input f, :nome, required: true %>
+    <%= error_tag f, :nome %>
+
+    <%= label f, :email, "E-mail" %>
+    <%= email_input f, :email, required: true %>
+    <%= error_tag f, :email %>
+
+    <%= label f, :password, "Senha" %>
+    <%= password_input f, :password, required: true %>
+    <%= error_tag f, :password %>
+
+    <div class="checkbox">
+    <%= label f, :ativo, "Ativo?" %>
+    <%= checkbox f, :ativo %>
+    </div>
+    <%= error_tag f, :ativo %>
+
+    <div class="checkbox">
+    <%= label f, :admin, "Administrador?" %>
+    <%= checkbox f, :admin %>
+    </div>
+    <%= error_tag f, :admin %>
+
+    <div>
+      <%= submit "Cadastrar" %>
+    </div>
+  </.form>
+  </div>
+</div>

@@ -61,9 +61,6 @@ defmodule SgarhWeb.Router do
 
   scope "/", SgarhWeb do
     pipe_through [:browser, :redirect_if_usuario_is_authenticated]
-
-    get "/usuarios/register", UsuarioRegistrationController, :new
-    post "/usuarios/register", UsuarioRegistrationController, :create
     get "/usuarios/log_in", UsuarioSessionController, :new
     post "/usuarios/log_in", UsuarioSessionController, :create
     get "/usuarios/reset_password", UsuarioResetPasswordController, :new
@@ -74,7 +71,9 @@ defmodule SgarhWeb.Router do
 
   scope "/", SgarhWeb do
     pipe_through [:browser, :require_authenticated_usuario]
-
+    
+    get "/usuarios/register", UsuarioRegistrationController, :new
+    post "/usuarios/register", UsuarioRegistrationController, :create
     get "/usuarios/settings", UsuarioSettingsController, :edit
     put "/usuarios/settings", UsuarioSettingsController, :update
     get "/usuarios/settings/confirm_email/:token", UsuarioSettingsController, :confirm_email
@@ -88,5 +87,12 @@ defmodule SgarhWeb.Router do
     post "/usuarios/confirm", UsuarioConfirmationController, :create
     get "/usuarios/confirm/:token", UsuarioConfirmationController, :edit
     post "/usuarios/confirm/:token", UsuarioConfirmationController, :update
+  end
+
+  scope "/", SgarhWeb do
+    pipe_through [:browser, :require_authenticated_usuario]
+
+    get "/usuarios", UsuarioController, :index
+
   end
 end

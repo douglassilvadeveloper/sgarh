@@ -1,0 +1,43 @@
+<div class="page-title">
+  <h1>Usuários</h1>
+  <%= link "+", to: Routes.usuario_registration_path(@conn, :new), class: "btn-add bg-success"%>
+</div>
+<div class="card-table">
+  <table class="table">
+    <thead class="">
+      <tr class="">
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Ativo</th>
+        <th>Admin</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <thead>
+      <%= for usuario <- @usuarios do %>
+        <tr>
+          <td><%= usuario.nome %></td>
+          <td><%= usuario.email %></td>
+          <td>
+            <%= if usuario.ativo do %>
+              <span class="text-success">Sim</span>
+            <% else %>
+              <span class="text-danger">Não</span>
+            <% end %>
+          </td>
+          <td>
+            <%= if usuario.admin do %>
+              <span class="text-success">Sim</span>
+            <% else %>
+              <span class="text-danger">Não</span>
+            <% end %>
+          </td>
+          <td>
+            <%# <%= link "Detalhes", to: Routes.usuario_path(@conn, :show, usuario), class: "" %> %>
+            <%# <%= link "Deletar", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, class: "" %> %>
+          </td>
+        </tr>
+      <% end %>
+    </thead>
+  </table>
+</div>

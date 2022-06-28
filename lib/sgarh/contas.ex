@@ -8,6 +8,11 @@ defmodule Sgarh.Contas do
 
   alias Sgarh.Contas.{Usuario, UsuarioToken, UsuarioNotifier}
 
+  def list_usuarios() do
+    Usuario
+    |> Repo.all()
+  end
+
   ## Database getters
 
   @doc """
