@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Sgarh
 
 To start your Phoenix server:
@@ -53,5 +53,3 @@ Obs. 2: O chefe do setor será o usuário administrador, com permissão ampla pa
 
 ![gif-sgarh](https://user-images.githubusercontent.com/105575914/176107050-9e767765-bab6-41b0-8fb6-aa03e0c02079.gif)
 
-
->>>>>>> f6ea4f74c611b332fe217925d1b856050a19e802
