@@ -184,11 +184,16 @@ body {
   font-weight: bold;
   font-size: 24px;
 }
-.btn-login {
-  width: 100%;
+button {
   background-color: #202230;
   border-color: #202230;
   color: #fff;
+}
+button:hover {
+  background-color: #474957;
+}
+.btn-login {
+  width: 100%;
 }
 
 /* Navbar */

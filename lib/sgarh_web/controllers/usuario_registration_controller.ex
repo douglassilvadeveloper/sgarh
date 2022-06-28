@@ -21,7 +21,8 @@ defmodule SgarhWeb.UsuarioRegistrationController do
 
         conn
         |> put_flash(:info, "Usuario created successfully.")
-        |> UsuarioAuth.log_in_usuario(usuario)
+        # |> UsuarioAuth.log_in_usuario(usuario)
+        |> redirect(to: Routes.usuario_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
