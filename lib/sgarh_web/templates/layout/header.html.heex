@@ -1,16 +1,17 @@
 <header>
-  <section class="container-custom">
-    <nav>
-      <ul>
-        <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-        <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-          <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-        <% end %>
-      </ul>
-      <%= render "_usuario_menu.html", assigns %>
-    </nav>
-    <a href="https://phoenixframework.org/" class="phx-logo">
-      <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-    </a>
-  </section>
+  <nav class="navbar">
+    <div class="navbar-content-left">
+      <%= link "SGARH", to: Routes.page_path(@conn, :index), class: "logo-default" %>
+      <%= link "Atividades", to: Routes.page_path(@conn, :index), class: "menu-items" %>
+      <%= link "Funcionários", to: Routes.page_path(@conn, :index), class: "menu-items" %>
+      <%= link "Usuários", to: Routes.page_path(@conn, :index), class: "menu-items" %>
+    </div>
+    <div class="user-dropdown">
+      <span class="user-menu"><%= @current_usuario.email %></span>
+      <div class="user-dropdown-content">
+        <%= link "Configurações", to: Routes.usuario_settings_path(@conn, :edit) %>
+        <%= link "Sair", to: Routes.usuario_session_path(@conn, :delete), method: :delete %>
+      </div>
+    </div>
+  </nav>
 </header>
