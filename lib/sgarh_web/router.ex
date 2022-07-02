@@ -94,6 +94,9 @@ defmodule SgarhWeb.Router do
 
     get "/usuarios", UsuarioController, :index
     delete "/usuarios/:id", UsuarioController, :delete
+    get "/usuarios/:id", UsuarioController, :show
+    get "/usuarios/:id/edit", UsuarioController, :edit
+    put "/usuarios/:id", UsuarioController, :update
 
   end
 end

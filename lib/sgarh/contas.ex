@@ -17,6 +17,16 @@ defmodule Sgarh.Contas do
     Repo.delete(usuario)
   end
 
+  def update_usuario(%Usuario{} = usuario, attrs) do
+    usuario
+    |> Usuario.update_changeset(attrs)
+    |> Repo.update()
+  end
+
+  def change_usuario(%Usuario{} = usuario, attrs \\ %{}) do
+    Usuario.update_changeset(usuario, attrs)
+  end
+
   ## Database getters
 
   @doc """

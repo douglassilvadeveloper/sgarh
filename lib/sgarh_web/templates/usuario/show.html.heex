@@ -1,0 +1,32 @@
+<main>
+  <section class="detail-cards">
+    <div class="detail-card-left">
+      <div class="detail-card-left-header">
+        <h1 class="detail-card-left-title">Informações do Usuário</h1>
+        <%= link "Editar", to: Routes.usuario_path(@conn, :edit, @usuario), class: "text-success" %>
+      </div>
+      <div class="detail-card-left-content">
+        <img class="avatar" src={Routes.static_path(@conn, "/images/people.png")} alt="Usuário"/>
+        <p class="detail-info"><%= @usuario.nome %></p>
+        <p class="detail-info"><%= @usuario.email %></p>
+        <p class="detail-info">
+          <%= if @usuario.ativo do %>
+            <span class="text-success">Ativo</span>
+          <% else %>
+            <span class="text-danger">Inativo</span>
+          <% end %>
+        </p>
+        <p class="detail-info">
+          <%= if @usuario.admin do %>
+            <span class="text-success">Administrador</span>
+          <% else %>
+            <span class="text-danger">Usuário comum</span>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="detail-card-right">
+      <h1 class="detail-card-right-title">Andamentos de atividades realizados</h1>
+    </div>
+  </section>
+</main>

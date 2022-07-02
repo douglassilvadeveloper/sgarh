@@ -370,3 +370,47 @@ button:hover {
 header {
   margin-bottom: 2px;
 }
+
+.detail-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+}
+.detail-card-left-title,
+.detail-card-right-title {
+  font-size: 18px;
+}
+.detail-card-left {
+  background-color: #fff;
+  padding: 12px;
+  width: 30%;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.detail-card-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detail-card-right {
+  background-color: #fff;
+  padding: 12px;
+  width: 69%;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 6px;
+}
+.detail-info {
+  margin: 0;
+  padding: 0;
+}
+.detail-card-left-header {
+  display: flex;
+  justify-content: space-between;
+}

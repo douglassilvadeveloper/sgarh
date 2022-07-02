@@ -33,7 +33,7 @@
             <% end %>
           </td>
           <td>
-            <%# <%= link "Detalhes", to: Routes.usuario_path(@conn, :show, usuario), class: "" %> Detalhes
+            <%= link "Detalhes", to: Routes.usuario_path(@conn, :show, usuario), class: "text-info" %>
             <%= link "Deletar", to: Routes.usuario_path(@conn, :delete, usuario), method: :delete, class: "text-danger" %>
           </td>
         </tr>

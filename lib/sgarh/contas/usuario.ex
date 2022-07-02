@@ -41,6 +41,13 @@ defmodule Sgarh.Contas.Usuario do
     |> validate_password(opts)
   end
 
+  def update_changeset(usuario, attrs, opts \\ []) do
+    usuario
+    |> cast(attrs, [:nome, :email, :ativo, :admin])
+    |> validate_nome()
+    |> validate_email()
+  end
+
   defp validate_nome(changeset) do
     changeset
     |> validate_required([:nome])
