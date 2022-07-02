@@ -4,7 +4,9 @@
       <%= link "SGARH", to: Routes.page_path(@conn, :index), class: "logo-default" %>
       <%= link "Atividades", to: Routes.page_path(@conn, :index), class: "menu-items" %>
       <%= link "Funcionários", to: Routes.page_path(@conn, :index), class: "menu-items" %>
-      <%= link "Usuários", to: Routes.usuario_path(@conn, :index), class: "menu-items" %>
+      <%= if @current_usuario.admin do %>
+        <%= link "Usuários", to: Routes.usuario_path(@conn, :index), class: "menu-items" %>
+      <% end %>
     </div>
     <div class="user-dropdown">
       <span class="user-menu"><%= @current_usuario.email %></span>
