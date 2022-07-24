@@ -1,0 +1,26 @@
+<h1>Listing Tipos atividades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tipo_atividade <- @tipos_atividades do %>
+    <tr>
+      <td><%= tipo_atividade.nome %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.tipo_atividade_path(@conn, :show, tipo_atividade) %></span>
+        <span><%= link "Edit", to: Routes.tipo_atividade_path(@conn, :edit, tipo_atividade) %></span>
+        <span><%= link "Delete", to: Routes.tipo_atividade_path(@conn, :delete, tipo_atividade), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tipo atividade", to: Routes.tipo_atividade_path(@conn, :new) %></span>

@@ -1,0 +1,13 @@
+<h1>Show Tipo atividade</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @tipo_atividade.nome %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tipo_atividade_path(@conn, :edit, @tipo_atividade) %></span> |
+<span><%= link "Back", to: Routes.tipo_atividade_path(@conn, :index) %></span>

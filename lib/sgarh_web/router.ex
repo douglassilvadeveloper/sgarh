@@ -71,6 +71,7 @@ defmodule SgarhWeb.Router do
 
   scope "/", SgarhWeb do
     pipe_through [:browser, :require_authenticated_usuario]
+    # pipe_through [:browser]
     
     get "/usuarios/register", UsuarioRegistrationController, :new
     post "/usuarios/register", UsuarioRegistrationController, :create
@@ -98,5 +99,11 @@ defmodule SgarhWeb.Router do
     get "/usuarios/:id/edit", UsuarioController, :edit
     put "/usuarios/:id", UsuarioController, :update
 
+  end
+  scope "/", SgarhWeb do
+    pipe_through [:browser, :require_authenticated_usuario]
+    
+    resources "/tipos_atividades", TipoAtividadeController
+  
   end
 end
