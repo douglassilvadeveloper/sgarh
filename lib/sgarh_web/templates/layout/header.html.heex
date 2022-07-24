@@ -2,6 +2,7 @@
   <nav class="navbar">
     <div class="navbar-content-left">
       <%= link "SGARH", to: Routes.page_path(@conn, :index), class: "logo-default" %>
+      <%= link "Tipos de atividades", to: Routes.tipo_atividade_path(@conn, :index), class: "menu-items" %>
       <%= link "Atividades", to: Routes.page_path(@conn, :index), class: "menu-items" %>
       <%= link "Funcionários", to: Routes.page_path(@conn, :index), class: "menu-items" %>
       <%= if @current_usuario.admin do %>

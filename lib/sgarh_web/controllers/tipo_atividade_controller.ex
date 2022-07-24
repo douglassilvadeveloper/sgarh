@@ -19,7 +19,7 @@ defmodule SgarhWeb.TipoAtividadeController do
       {:ok, tipo_atividade} ->
         conn
         |> put_flash(:info, "Tipo atividade created successfully.")
-        |> redirect(to: Routes.tipo_atividade_path(conn, :show, tipo_atividade))
+        |> redirect(to: Routes.tipo_atividade_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)

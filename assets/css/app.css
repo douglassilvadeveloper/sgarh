@@ -375,7 +375,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 6px;
+  padding: 1px;
 }
 .detail-card-left-title,
 .detail-card-right-title {
@@ -413,4 +413,12 @@ header {
 .detail-card-left-header {
   display: flex;
   justify-content: space-between;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-20 {
+  width: 20%;
 }

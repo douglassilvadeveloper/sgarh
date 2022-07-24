@@ -1,5 +1,10 @@
-<h1>Edit Tipo atividade</h1>
+<div class="form-container">
+  <div>
+  <h1>Editar Tipo de Atividade</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.tipo_atividade_path(@conn, :update, @tipo_atividade)) %>
+  <%= render "form.html", Map.put(assigns, :action, Routes.tipo_atividade_path(@conn, :update, @tipo_atividade)) %>
 
-<span><%= link "Back", to: Routes.tipo_atividade_path(@conn, :index) %></span>
+  <%= link "Voltar", to: Routes.tipo_atividade_path(@conn, :show, @tipo_atividade), class: "text-warning" %>
+
+  </div>
+</div>

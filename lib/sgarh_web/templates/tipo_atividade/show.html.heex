@@ -1,13 +1,20 @@
-<h1>Show Tipo atividade</h1>
 
-<ul>
 
-  <li>
-    <strong>Nome:</strong>
-    <%= @tipo_atividade.nome %>
-  </li>
 
-</ul>
-
-<span><%= link "Edit", to: Routes.tipo_atividade_path(@conn, :edit, @tipo_atividade) %></span> |
-<span><%= link "Back", to: Routes.tipo_atividade_path(@conn, :index) %></span>
+<main>
+  <section class="detail-cards">
+    <div class="detail-card-left">
+      <div class="detail-card-left-header">
+        <h1 class="detail-card-left-title">Tipos de Atividades</h1>
+        <%= link "Editar", to: Routes.tipo_atividade_path(@conn, :edit, @tipo_atividade), class: "text-success" %>
+      </div>
+      <div class="detail-card-left-content">
+        <p class="detail-info"><%= @tipo_atividade.nome %></p>
+      </div>
+    </div>
+    <div class="detail-card-right">
+      <h1 class="detail-card-right-title">Atividades relacionadas</h1>
+    </div>
+  </section>
+  <span><%= link "Voltar", to: Routes.tipo_atividade_path(@conn, :index), class: "text-warning" %></span>
+</main>
