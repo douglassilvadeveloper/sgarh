@@ -1,0 +1,28 @@
+<h1>Show Atividade</h1>
+
+<ul>
+
+  <li>
+    <strong>Titulo:</strong>
+    <%= @atividade.titulo %>
+  </li>
+
+  <li>
+    <strong>Data base:</strong>
+    <%= @atividade.data_base %>
+  </li>
+
+  <li>
+    <strong>Data final:</strong>
+    <%= @atividade.data_final %>
+  </li>
+
+  <li>
+    <strong>Encerrada:</strong>
+    <%= @atividade.encerrada %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.atividade_path(@conn, :edit, @atividade) %></span> |
+<span><%= link "Back", to: Routes.atividade_path(@conn, :index) %></span>

@@ -104,6 +104,7 @@ defmodule SgarhWeb.Router do
     pipe_through [:browser, :require_authenticated_usuario]
     
     resources "/tipos_atividades", TipoAtividadeController
+    resources "/atividades", AtividadeController
   
   end
 end

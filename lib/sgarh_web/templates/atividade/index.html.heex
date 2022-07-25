@@ -1,0 +1,32 @@
+<h1>Listing Atividades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Data base</th>
+      <th>Data final</th>
+      <th>Encerrada</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for atividade <- @atividades do %>
+    <tr>
+      <td><%= atividade.titulo %></td>
+      <td><%= atividade.data_base %></td>
+      <td><%= atividade.data_final %></td>
+      <td><%= atividade.encerrada %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.atividade_path(@conn, :show, atividade) %></span>
+        <span><%= link "Edit", to: Routes.atividade_path(@conn, :edit, atividade) %></span>
+        <span><%= link "Delete", to: Routes.atividade_path(@conn, :delete, atividade), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Atividade", to: Routes.atividade_path(@conn, :new) %></span>

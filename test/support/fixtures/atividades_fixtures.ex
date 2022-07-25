@@ -17,4 +17,21 @@ defmodule Sgarh.AtividadesFixtures do
 
     tipo_atividade
   end
+
+  @doc """
+  Generate a atividade.
+  """
+  def atividade_fixture(attrs \\ %{}) do
+    {:ok, atividade} =
+      attrs
+      |> Enum.into(%{
+        data_base: ~D[2022-07-23],
+        data_final: ~D[2022-07-23],
+        encerrada: true,
+        titulo: "some titulo"
+      })
+      |> Sgarh.Atividades.create_atividade()
+
+    atividade
+  end
 end
